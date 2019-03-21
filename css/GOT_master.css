@@ -17,22 +17,13 @@ body { background-image:url(../images/grungeBG.jpg);
 h1 {
 	font-family: 'GOT_font';
 	color:white;
+    margin: 0 auto;
 	margin-top:30px;
 	font-size:1.25em;
 	width: 500px;
 	height: 100px;
 }
 
-.houseNames {
-
-}
-
-.nameCon {
-	width: 500px;
-	height: 100px;
-	overflow: hidden;
-	margin: 0 auto;
-}
 
 main {
 	position:relative;

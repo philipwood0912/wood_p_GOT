@@ -12,11 +12,13 @@
 		//debugger;
 		//get the lowercase house name from the class list
 		let targetHouse = this.className.split(" ")[1];
-		
+		let houseName = document.querySelector('.houseName');
 		// make sure the names match - needs to be uppercase
 		// stark becomes Stark -> first make a capital S then add tark
 		let targetSrc = targetHouse.charAt(0).toUpperCase() + targetHouse.slice(1);
-
+        
+        houseName.innerHTML = `House ${targetSrc}`;
+        
 		video.src = `video/House-${targetSrc}.mp4`;
 
 		lightbox.classList.add('show-lightbox');
