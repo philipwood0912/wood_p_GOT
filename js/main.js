@@ -36,14 +36,14 @@
 	function animateBanner() {
 		const offSet = 600;
 
-		totalOffset = this.dataset.offset * offSet;
+		totalOffset = this.dataset.offset * offSet /*+ "px"*/;
 		//set the style css will animate
 		//banners.style.right = totalOffset;
 
 		TweenMax.to(banners, 0.8, { right: totalOffset });
 	}
 
-	//shields.forEach(shield => shield.addEventListener('click', showLightbox));
+	shields.forEach(shield => shield.addEventListener('click', showLightbox));
 	shields.forEach(shield => shield.addEventListener('click', animateBanner));
 	video.addEventListener('ended', hideLightbox);
 	closeLB.addEventListener('click', hideLightbox);

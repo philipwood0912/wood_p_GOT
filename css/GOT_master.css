@@ -19,6 +19,19 @@ h1 {
 	color:white;
 	margin-top:30px;
 	font-size:1.25em;
+	width: 500px;
+	height: 100px;
+}
+
+.houseNames {
+
+}
+
+.nameCon {
+	width: 500px;
+	height: 100px;
+	overflow: hidden;
+	margin: 0 auto;
 }
 
 main {
@@ -36,7 +49,7 @@ main {
 	overflow: hidden;
 }
 
-#houseImages { position:relative; width:4000px; /*transition: all .5s; */}
+#houseImages { position:relative; width:5400px; /*transition: all .5s; */}
 #houseImages img { float:left; }
 
 #bottomNav { margin-top:30px; }
@@ -80,6 +93,15 @@ main {
 
 .arryn { background-position:-253px -54px; }
 .arryn:hover { background-position:-253px 0px; }
+
+.targaryen { background-position:-304px -54px; }
+.targaryen:hover { background-position: -304px 0px; }
+
+.tyrell { background-position: -356px -54px; }
+.tyrell:hover { background-position: -356px 0px; }
+
+.frey { background-position: -408px -54px; }
+.frey:hover { background-position: -408px 0px; }
 /* ----- end image sprite ----- */
 
 /* ----- classes for transitions ----- */
