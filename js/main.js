@@ -12,12 +12,9 @@
 		//debugger;
 		//get the lowercase house name from the class list
 		let targetHouse = this.className.split(" ")[1];
-		let houseName = document.querySelector('.houseName');
 		// make sure the names match - needs to be uppercase
 		// stark becomes Stark -> first make a capital S then add tark
 		let targetSrc = targetHouse.charAt(0).toUpperCase() + targetHouse.slice(1);
-        
-        houseName.innerHTML = `House ${targetSrc}`;
         
 		video.src = `video/House-${targetSrc}.mp4`;
 
@@ -37,7 +34,11 @@
 
 	function animateBanner() {
 		const offSet = 600;
-
+        let nameSrc = this.className.split(" ")[1];
+        let houseName = document.querySelector('.houseName');
+        
+        houseName.innerHTML = `House ${nameSrc}`;
+        
 		totalOffset = this.dataset.offset * offSet /*+ "px"*/;
 		//set the style css will animate
 		//banners.style.right = totalOffset;
@@ -45,7 +46,7 @@
 		TweenMax.to(banners, 0.8, { right: totalOffset });
 	}
 
-	shields.forEach(shield => shield.addEventListener('click', showLightbox));
+	//shields.forEach(shield => shield.addEventListener('click', showLightbox));
 	shields.forEach(shield => shield.addEventListener('click', animateBanner));
 	video.addEventListener('ended', hideLightbox);
 	closeLB.addEventListener('click', hideLightbox);
