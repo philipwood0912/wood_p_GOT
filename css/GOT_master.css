@@ -22,6 +22,7 @@ h1 {
 	font-size:1.25em;
 	width: 500px;
 	height: 100px;
+    letter-spacing: 5px;
 }
 
 
@@ -132,6 +133,7 @@ main {
 .sigil-box img {
     width: 20%;
     margin-top: 42px;
+    border-radius: 300px;
 }
 
 .show-lightbox {display: block;}

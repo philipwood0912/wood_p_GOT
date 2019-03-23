@@ -12,10 +12,11 @@
 		//grab the right video source
 		//debugger;
 		//get the lowercase house name from the class list
-		let targetHouse = this;
+		
+        // let targetHouse = this.classList.split(" ")[1];
 		// make sure the names match - needs to be uppercase
 		// stark becomes Stark -> first make a capital S then add tark
-		let targetSrc = targetHouse.charAt(0).toUpperCase() + targetHouse.slice(1);
+		let targetSrc = this.charAt(0).toUpperCase() + this.slice(1);
         
 		video.src = `video/House-${targetSrc}.mp4`;
 
