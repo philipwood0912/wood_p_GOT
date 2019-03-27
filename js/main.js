@@ -64,7 +64,7 @@
         
         icon.innerHTML = `<img src="images/house-${this}.svg" alt="${this}">`;
         let sigil = document.querySelector('.sigil-box img');
-        TweenMax.fromTo(sigil, 2, { scale: 1, opacity:0 }, { scale: 1.2, repeat:1, yoyo:true, opacity:1 }).eventCallback("onComplete", showLightbox, null, this);
+        TweenMax.fromTo(sigil, 2, { scale: 1, opacity:0 }, { scale: 1.3, repeat:1, yoyo:true, opacity:1 }).eventCallback("onComplete", showLightbox, null, this);
     }
 
 	function animateBanner() {

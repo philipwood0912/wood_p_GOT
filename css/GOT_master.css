@@ -131,8 +131,8 @@ main {
 }
 
 .sigil-box img {
-    width: 20%;
-    margin-top: 42px;
+    width: 22%;
+    margin-top: 52px;
     border-radius: 300px;
 }
 
@@ -149,7 +149,7 @@ main {
 }
 
 video {
-	width: 50%;
+	width: 60%;
 	margin-top: 10%;
 	border: thin solid #949393;
 }
