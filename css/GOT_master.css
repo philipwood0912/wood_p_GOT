@@ -17,9 +17,14 @@ body { background-image:url(../images/grungeBG.jpg);
 h1 {
 	font-family: 'GOT_font';
 	color:white;
+    margin: 0 auto;
 	margin-top:30px;
 	font-size:1.25em;
+	width: 500px;
+	height: 50px;
+    letter-spacing: 5px;
 }
+
 
 main {
 	position:relative;
@@ -36,7 +41,7 @@ main {
 	overflow: hidden;
 }
 
-#houseImages { position:relative; width:4000px; /*transition: all .5s; */}
+#houseImages { position:relative; width:5400px; /*transition: all .5s; */}
 #houseImages img { float:left; }
 
 #bottomNav { margin-top:30px; }
@@ -80,6 +85,15 @@ main {
 
 .arryn { background-position:-253px -54px; }
 .arryn:hover { background-position:-253px 0px; }
+
+.targaryen { background-position:-304px -54px; }
+.targaryen:hover { background-position: -304px 0px; }
+
+.tyrell { background-position: -356px -54px; }
+.tyrell:hover { background-position: -356px 0px; }
+
+.frey { background-position: -408px -54px; }
+.frey:hover { background-position: -408px 0px; }
 /* ----- end image sprite ----- */
 
 /* ----- classes for transitions ----- */
@@ -107,6 +121,21 @@ main {
 	display: none;
 }
 
+.sigil-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+    text-align: center;
+}
+
+.sigil-box img {
+    width: 20%;
+    margin-top: 42px;
+    border-radius: 300px;
+}
+
 .show-lightbox {display: block;}
 
 
@@ -120,7 +149,17 @@ main {
 }
 
 video {
-	width: 80%;
+	width: 50%;
 	margin-top: 10%;
 	border: thin solid #949393;
+}
+
+.house-info {
+	color: #fff;
+	max-width: 600px;
+	margin: 0 auto;
+	font-size: 18px;
+	line-height: 22px;
+	text-indent: 2em;
+	background: rgba(0,0,0,0.8);
 }
