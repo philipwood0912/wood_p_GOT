@@ -7,7 +7,9 @@
 			closeLB = document.querySelector('.lightbox-close'),
 			banners = document.querySelector('#houseImages');
     let     icon = document.querySelector('.sigil-box'),
-    		houseInfo = document.querySelector('.house-info');
+    		houseInfo = document.querySelector('.house-info'),
+            throneTitle = document.querySelector('.title'),
+            imageCon = document.querySelector('#imageContainer');
 
     const houseData = [
 		[`STARK`, `House Stark of Winterfell is a Great House of Westeros, ruling over the vast region known as the North from their seat in Winterfell. It is one of the oldest lines of Westerosi nobility by far, claiming a line of descent stretching back over eight thousand years. Before the Targaryen conquest, as well as during the War of the Five Kings and Daenerys Targaryen's invasion of Westeros, the leaders of House Stark ruled over the region as the Kings in the North.`],
@@ -22,7 +24,7 @@
 
 		[`ARRYN`, `House Arryn of the Eyrie is one of the Great Houses of Westeros. It has ruled over the Vale of Arryn for millennia, originally as the Kings of Mountain and Vale and more recently as Lords Paramount of the Vale and Wardens of the East under the Targaryen kings and Baratheon-Lannister kings. The nominal head of House Arryn is Robin Arryn, the Lord of the Eyrie, with his stepfather Petyr Baelish acting as Lord Protector until he reaches the age of majority.`],
 
-		[`TARGERYEN`, `House Targaryen of Dragonstone is a Great House of Westeros and was the ruling royal House of the Seven Kingdoms for three centuries since it conquered and unified the realm, before it was deposed during Robert's Rebellion and House Baratheon replaced it as the new royal House. The few surviving Targaryens fled into exile to the Free Cities of Essos across the Narrow Sea. Currently based on Dragonstone off of the eastern coast of Westeros, House Targaryen seeks to retake the Seven Kingdoms from House Lannister, who formally replaced House Baratheon as the royal House following the destruction of the Great Sept of Baelor.`],
+		[`TARGARYEN`, `House Targaryen of Dragonstone is a Great House of Westeros and was the ruling royal House of the Seven Kingdoms for three centuries since it conquered and unified the realm, before it was deposed during Robert's Rebellion and House Baratheon replaced it as the new royal House. The few surviving Targaryens fled into exile to the Free Cities of Essos across the Narrow Sea. Currently based on Dragonstone off of the eastern coast of Westeros, House Targaryen seeks to retake the Seven Kingdoms from House Lannister, who formally replaced House Baratheon as the royal House following the destruction of the Great Sept of Baelor.`],
 
 		[`TYRELL`, `House Tyrell of Highgarden is one of the Great Houses of the Seven Kingdoms, being Lords Paramount of the Mander and the liege lords of the Reach. A large, wealthy house, its wealth is only surpassed among the Great Houses by House Lannister, and the Tyrells can field the greatest armies. Additionally, if they call the ships of the Redwyne fleet, the lords of the Shield Islands, and the coastal lords, they can command a navy that equals if not surpasses the royal fleet of King's Landing.`],
 
@@ -64,7 +66,15 @@
         
         icon.innerHTML = `<img src="images/house-${this}.svg" alt="${this}">`;
         let sigil = document.querySelector('.sigil-box img');
-        TweenMax.fromTo(sigil, 2, { scale: 1, opacity:0 }, { scale: 1.2, repeat:1, yoyo:true, opacity:1 }).eventCallback("onComplete", showLightbox, null, this);
+        
+        //animation: opacity and scale, increase / decrease, eventcallback run video function, pass on this as 'this'
+        TweenMax.fromTo(sigil, 2, { scale: 1, opacity:0 }, { scale: 1.3, repeat:1, yoyo:true, opacity:1 }).eventCallback("onComplete", showLightbox, null, this);
+        
+        // kill animation when page is clicked
+        document.addEventListener('click', function(e) {
+            icon.classList.remove('show-lightbox');
+            TweenMax.killTweensOf(sigil).eventCallBack("onComplate", null);
+        });
     }
 
 	function animateBanner() {
@@ -72,19 +82,21 @@
         let nameSrc = this.className.split(" ")[1];
         let houseName = document.querySelector('.houseName');
         
-        //houseName.innerHTML = `House ${nameSrc}`;
+        throneTitle.classList.add('hidden');
+        imageCon.classList.remove('hidden');
         
-		totalOffset = this.dataset.offset * offSet /*+ "px"*/;
+		totalOffset = this.dataset.offset * offSet; /*+ "px"*/
 		//set the style css will animate
 		//banners.style.right = totalOffset;
 		//houseName.textContent = `House ${nameSrc}`;
 		houseName.textContent = `House ${houseData[this.dataset.offset][0]}`;
 		houseInfo.textContent = houseData[this.dataset.offset][1];
-
+        
+        //Banner animation, eventcallback, run sigil function, pass on nameSrc as 'this'
 		TweenMax.to(banners, 0.8, { right: totalOffset }).eventCallback("onComplete", animateSigil, null, nameSrc);
         
     }
-	houseInfo.textContent = houseData[0][1];
+	//houseInfo.textContent = houseData[0][1];
 	//shields.forEach(shield => shield.addEventListener('click', showLightbox));
 	shields.forEach(shield => shield.addEventListener('click', animateBanner));
 	video.addEventListener('ended', hideLightbox);

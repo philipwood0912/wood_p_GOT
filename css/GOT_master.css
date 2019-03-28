@@ -25,6 +25,11 @@ h1 {
     letter-spacing: 5px;
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
 
 main {
 	position:relative;
@@ -36,9 +41,10 @@ main {
 #imageContainer {
 	width:600px;
 	height:360px;
-	background-color:grey;
+	background: rbga(0,0,0,0);
 	margin:0 auto;
 	overflow: hidden;
+    margin-top: 3px;
 }
 
 #houseImages { position:relative; width:5400px; /*transition: all .5s; */}
@@ -131,8 +137,8 @@ main {
 }
 
 .sigil-box img {
-    width: 20%;
-    margin-top: 42px;
+    width: 22%;
+    margin-top: 52px;
     border-radius: 300px;
 }
 
@@ -149,17 +155,25 @@ main {
 }
 
 video {
-	width: 50%;
-	margin-top: 10%;
+	width: 80%;
+	margin-top: 2%;
 	border: thin solid #949393;
 }
 
 .house-info {
 	color: #fff;
-	max-width: 600px;
+	max-width: 650px;
 	margin: 0 auto;
-	font-size: 18px;
-	line-height: 22px;
-	text-indent: 2em;
-	background: rgba(0,0,0,0.8);
+	font-size: 16px;
+	line-height: 25px;
+	
+    height: 230px;
+}
+
+.hidden {
+    display: none;
+}
+
+#para {
+    font-size: 25px;
 }
