@@ -11,8 +11,8 @@
 <body>
     <main>
 
-    <section id="imageContainer">
-    	<div id="houseImages" style="right: 0px;"> <!-- add in all of the images to make a scrolling "banner" -->
+    <section id="imageContainer" class="hidden">
+    	<div id="houseImages" style="right: -600px;"> <!-- add in all of the images to make a scrolling "banner" -->
     		<img src="images/stark.jpg">
     		<img src="images/baratheon.jpg">
     		<img src="images/lannister.jpg">
@@ -24,6 +24,8 @@
             <img src="images/frey.jpg">
         </div>
     </section>
+        
+    <img class="title" src="images/throne_title.png" alt="game of thrones">
 
     <nav id="bottomNav">
     	<ul id="navList">
@@ -40,9 +42,9 @@
         </ul>
     </nav>
 
-    <h1 class="houseName">House Stark</h1><!-- replace this with the house name -->
+    <h1 class="houseName">Choose Your House</h1><!-- replace this with the house name -->
 
-    <p class="house-info"></p><!-- replace this with house details (github gist) -->
+    <p class="house-info"><span id="para">Who doesn't love Game of Thrones?</span><br><br><br>Sigil Images Created By<br><a href="https://www.deviantart.com/fuzzysocks102/gallery/">fuzzysocks102 - Deviant Art</a></p><!-- replace this with house details (github gist) -->
 </main>
     
 <section class="sigil-box">
